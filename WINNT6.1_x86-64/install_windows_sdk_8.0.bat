@@ -19,7 +19,7 @@ IF EXIST %ASYNCINFO_PATH% (
 
 %WGET% -q "%PACKAGES_URL%/sdks/sdksetup.exe"
 ECHO "Installing the SDK..."
-sdksetup.exe /q /norestart
+sdksetup.exe /q /norestart /l sdksetup.txt
 
 IF EXIST %ASYNCINFO_PATH% (
   ECHO "Replacing asyncinfo.h..."
