@@ -29,6 +29,9 @@ IF EXIST %ASYNCINFO_PATH% (
   ECHO "asyncinfo.h has been replaced!"
 )
 
+rm sdksetup.exe
+rm asyncinfo.h
+
 IF EXIST %ASYNCINFO_PATH% (
   echo "The Windows SDK 8.0 has been installed correctly."
   exit /b 0
