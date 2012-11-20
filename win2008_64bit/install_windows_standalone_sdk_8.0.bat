@@ -10,7 +10,7 @@ REM [2] http://download.microsoft.com/download/F/1/3/F1300C9C-A120-4341-90DF-8A5
 
 SET PACKAGES_URL=http://dev-stage01.build.mozilla.org/pub/mozilla.org/mozilla/libraries/win32
 SET WGET=C:\mozilla-build\wget\wget.exe
-SET UNZIP=C:\mozilla-build\info-zip\unzip.exe
+SET SEVEN_ZIP=C:\mozilla-build\7zip\7z.exe
 SET ASYNCINFO_PATH="C:\Program Files (x86)\Windows Kits\8.0\Include\winrt\asyncinfo.h"
 
 IF EXIST %ASYNCINFO_PATH% (
@@ -20,10 +20,19 @@ IF EXIST %ASYNCINFO_PATH% (
   echo "The Windows SDK 8.0 is not installed."
 )
 
+mkdir sdksetup
+cd sdksetup
+
 REM This packages is 434MB
-%WGET% -q "%PACKAGES_URL%/sdks/sdksetup.zip"
+REM %WGET% -q "%PACKAGES_URL%/sdks/sdksetup.zip"
 ECHO "Unpacking the SDK..."
-%UNZIP% sdksetup.zip
+REM %SEVEN_ZIP% x sdksetup.zip
+
+IF NOT EXIST sdksetup.exe (
+   ECHO "The unpacking did not work."
+   exit /b 1
+)
+
 ECHO "Installing the SDK..."
 sdksetup.exe /q /norestart /l sdksetup.txt
 
@@ -35,8 +44,8 @@ IF EXIST %ASYNCINFO_PATH% (
   ECHO "asyncinfo.h has been replaced!"
 )
 
-rm sdksetup.exe
-rm asyncinfo.h
+CD ..
+RMDIR sdksetup
 
 IF EXIST %ASYNCINFO_PATH% (
   echo "The Windows SDK 8.0 has been installed correctly."
