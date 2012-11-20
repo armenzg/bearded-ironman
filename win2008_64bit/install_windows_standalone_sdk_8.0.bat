@@ -24,9 +24,9 @@ mkdir sdksetup
 cd sdksetup
 
 REM This packages is 434MB
-REM %WGET% -q "%PACKAGES_URL%/sdks/sdksetup.zip"
+%WGET% -q "%PACKAGES_URL%/sdks/sdksetup.zip"
 ECHO "Unpacking the SDK..."
-REM %SEVEN_ZIP% x sdksetup.zip
+%SEVEN_ZIP% x sdksetup.zip
 
 IF NOT EXIST sdksetup.exe (
    ECHO "The unpacking did not work."
