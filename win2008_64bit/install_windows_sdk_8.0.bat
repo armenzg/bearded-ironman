@@ -1,10 +1,11 @@
 @ECHO OFF
-REM Desc:   The Windows SDK 8.0 + modified asyncinfo.h was requested in bug 810141 for the Windows 8
-REM         support project. The SDK was downloaded from Microsoft [1].
-REM Date:   November 13th, 2012
+REM Desc:   The Windows SDK for Windows 8 + modified asyncinfo.h was requested in 
+REM         bug 810141 for the Windows 8 support project. The SDK was downloaded from Microsoft [1][2].
+REM Date:   November 15th, 2012
 REM Files:  sdksetup.exe, asyncinfo.h
 REM
 REM [1] http://msdn.microsoft.com/en-us/windows/desktop/hh852363.aspx
+REM [2] http://download.microsoft.com/download/F/1/3/F1300C9C-A120-4341-90DF-8A52509B23AC/standalonesdk/sdksetup.exe
 
 SET PACKAGES_URL=http://dev-stage01.build.mozilla.org/pub/mozilla.org/mozilla/libraries/win32
 SET WGET=C:\mozilla-build\wget\wget.exe
