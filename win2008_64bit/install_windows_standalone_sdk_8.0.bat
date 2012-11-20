@@ -20,11 +20,11 @@ IF EXIST %ASYNCINFO_PATH% (
   echo "The Windows SDK 8.0 is not installed."
 )
 
-mkdir sdksetup
-cd sdksetup
+MKDIR sdksetup
+CD sdksetup
 
 REM This packages is 434MB
-%WGET% -q "%PACKAGES_URL%/sdks/sdksetup.zip"
+%WGET% "%PACKAGES_URL%/sdks/sdksetup.zip"
 ECHO "Unpacking the SDK..."
 %SEVEN_ZIP% x sdksetup.zip
 
@@ -45,7 +45,7 @@ IF EXIST %ASYNCINFO_PATH% (
 )
 
 CD ..
-RMDIR sdksetup
+RMDIR /S /Q sdksetup
 
 IF EXIST %ASYNCINFO_PATH% (
   echo "The Windows SDK 8.0 has been installed correctly."
