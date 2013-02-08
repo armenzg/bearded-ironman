@@ -5,6 +5,13 @@ REM WARNING: Each of these steps running with care will get you a working machin
 REM This script helps to setup up a fresh Windows 8 64-bit machine
 REM This script cannot yet be run silently
 
+REM Original sources for some of the files:
+REM   - http://sourceforge.net/projects/pywin32/files/pywin32/Build%20217/pywin32-217.win32-py2.7.exe/download
+REM   - http://ftp.sk.freebsd.org/pub/vim/pc/gvim73_46.exe
+REM   - http://archive.apache.org/dist/httpd/binaries/win32/httpd-2.2.22-win32-x86-no_ssl.msi
+REM   - http://www.uvnc.eu/download/10962/UltraVnc_10962_x64.msi
+REM   - http://sourceforge.net/projects/gnuwin32/files/coreutils/5.3.0/coreutils-5.3.0.exe/download
+
 SET PACKAGES_URL="http://dev-stage01.build.mozilla.org/pub/mozilla.org/mozilla/libraries/win32/"
 SET DOWN_PATH=%USERPROFILE%%\\Desktop\\Downloads
 SET WGET=C:\\mozilla-build\\wget\wget.exe
